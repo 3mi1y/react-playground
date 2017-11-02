@@ -34,7 +34,10 @@ class App extends Component {
     this.setState({ sentences: data.sentences })
   }
   handleSearchTermChange = (e) => {
-    this.setState({searchTerm: e.target.value})
+    // we have access to the entire event attached to the input field.
+    // We can use this to find the value of the target on that event.
+    let wordToSearch = e.target.value
+    this.setState({searchTerm: wordToSearch})
   }
   reset = () => {
     this.setState({ sentences: data.sentences, searchTerm: '' })
