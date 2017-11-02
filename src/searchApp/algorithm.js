@@ -15,6 +15,7 @@ console.log(searchSentences(sentences, 'dog'))
 // Start with some basic includes examples.
 // const nums = [1,3,5]
 // nums.includes(1) -> true
+// Just execute this file directly with `node`
 // Make sure to review the split(' ') method as well 
 // You could show them a quick example of how they work together in the console
 // ['It is almost thanksgiving!'].split(' ').includes('thanksgiving') -> true
