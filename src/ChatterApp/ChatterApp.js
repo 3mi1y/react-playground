@@ -1,33 +1,44 @@
-import React from 'react'
-import DATA from './DATA'
+import React, {Component} from 'react'
+import faker from 'faker'
 import './styles.css'
+import Chats from './Chats'
 
-const Chats = ({chats}) => {
-  const mappedChats = chats.map((chat) => {
+class ChatterApp extends Component {
+  state = {
+    chats: undefined
+  }
+  componentDidMount () {
+    // alert('COMPONENT DID MOUNT')
+    setTimeout(() => {
+      this.setChatData()
+    }, 1000)
+  }
+  setChatData = () => {
+    // alert('ABOUT TO SET CHAT DATA')
+    let chatsArr = []
+
+    for (let i = 0; i < 111; i++) {
+      let chat = {
+        avatar: faker.image.avatar(),
+        username: faker.internet.userName(),
+        message: faker.random.words()
+      }
+      chatsArr.push(chat)
+    }
+    this.setState({ chats: chatsArr })
+  }
+  render () {
     return (
-      <div className='chatSection'>
-        <h3>{chat.username}</h3>
-        <p>{chat.chat}</p>
+      <div>
+        <h1>Hello from Chatter App</h1>
+        {
+          this.state.chats
+            ? <Chats chats={this.state.chats} />
+            : 'Loading...'
+        }
       </div>
     )
-  })
-
-  return (
-    <div>
-      {
-        mappedChats
-      }
-    </div>
-  )
-}
-
-const ChatterApp = () => {
-  return (
-    <div>
-      <h1>Hello from Chatter App</h1>
-      <Chats chats={DATA.chats} />
-    </div>
-  )
+  }
 }
 
 export default ChatterApp
