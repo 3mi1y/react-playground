@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#react-app {
+  background-color: #edebee;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23d0a07a' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  height: 500 vh;
+  width: 500 vh;
+}
+
+.jumbo h3 {
+  font-family: Lobster;
+  color: white;
+  font-size: 100px;
+}
+
+.jumbo {
+  background-image: url('https://i.pinimg.com/736x/46/07/b4/4607b434b018ca0f98731bdb25269991--halloween-art-projects-kid-halloween.jpg');
+  opacity: 6;
+}
+
+.myNav {
+  display: flex;
+  background-image: linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%);
+}
+
+.myNav li {
+  text-decoration: none;
+  font-family: Ariel;
+  font-size: 20px;
+  color: white;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.myNav li:hover {
+  color: MistyRose;
+}
+
+.about {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px dotted black;
+  background-color: rgba(250, 250, 250, .5);
+    padding: 3%;
+}
+
+.about h2 {
+  font-family: Lobster;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-right: 5%;
+}
+
+.products {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px dotted black;
+  background-color: rgba(244, 155, 66, .5);
+  padding: 3%;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+
+.products h2 {
+  font-family: Lobster;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.candy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.candy-card img {
+  max-width: 100%;
+}

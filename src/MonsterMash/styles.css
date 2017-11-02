@@ -1,0 +1,25 @@
+#monster-mash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.monsterCard {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+}
+
+.monsterCard img {
+  max-width: 50%;
+}
+
+.myMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
