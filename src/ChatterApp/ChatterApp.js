@@ -27,10 +27,18 @@ class ChatterApp extends Component {
     }
     this.setState({ chats: chatsArr })
   }
+  addChat = () => {
+    let allChats = this.state.chats
+    let dc = { avatar: 'asdfa', username: 'asdfs', message: 'asdf' }
+    allChats.unshift(dc)
+    this.setState({ chats: allChats })
+  }
   render () {
     return (
       <div>
         <h1>Hello from Chatter App</h1>
+
+        <button onClick={this.addChat}>Add</button>
         {
           this.state.chats
             ? <Chats chats={this.state.chats} />
