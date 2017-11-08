@@ -18,6 +18,45 @@ class MenuContainer extends Component {
     this.setState({searchTerm: e.target.value})
   }
 
+  removeMildItems = (event) => {
+    const checked = event.target.checked
+    console.log(checked)
+    if (checked) {
+      const filterOutMenuItems = this.state.menuItems.filter(item =>
+        item.spiceLevel > 4
+      )
+      this.setState({ menuItems: filterOutMenuItems })
+    } else {
+      this.setState({ menuItems: data.items })
+    }
+  }
+
+  removeMediumItems = (event) => {
+    const checked = event.target.checked
+    console.log(checked)
+    if (checked) {
+      const filterOutMenuItems = this.state.menuItems.filter(item =>
+        item.spiceLevel < 4 && item.spiceLevel > 7
+      )
+      this.setState({ menuItems: filterOutMenuItems })
+    } else {
+      this.setState({ menuItems: data.items })
+    }
+  }
+
+  removeSpicyItems = (event) => {
+    const checked = event.target.checked
+    console.log(checked)
+    if (checked) {
+      const filterOutMenuItems = this.state.menuItems.filter(item =>
+        item.spiceLevel < 7
+      )
+      this.setState({ menuItems: filterOutMenuItems })
+    } else {
+      this.setState({ menuItems: data.items })
+    }
+  }
+
   updateMenuList = (e) => {
     e.preventDefault()
     const updatedMenuItems = this.state.menuItems.filter(item => {
@@ -41,6 +80,9 @@ class MenuContainer extends Component {
           handleSearchTermChange={this.handleSearchTermChange}
           updateMenuList={this.updateMenuList}
           searchTerm={this.state.searchTerm}
+          removeMediumItems={this.removeMediumItems}
+          removeMildItems={this.removeMildItems}
+          removeSpicyItems={this.removeSpicyItems}
         />
         {
           this.state.menuItems
