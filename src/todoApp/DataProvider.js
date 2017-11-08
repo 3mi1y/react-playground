@@ -9,19 +9,21 @@ class DataProvider extends Component {
     localStorage.setItem('todos', JSON.stringify([{id: 1, title: 'code'}, {id: 2, title: 'more code'}]))
     this.fetchLocalTodos()
   }
-  simpleLocalStorageExample = () => {
-    localStorage.setItem('name', 'Doug')
-    console.log(localStorage.getItem('name'))
-    // Also view it @ applicatoin -> storage -> local storage
-  }
-  objectStorageExample = () => {
-    let person = JSON.stringify({name: 'Doug', age: 17})
-    localStorage.setItem('me', person)
-    console.log(JSON.parse(localStorage.getItem('me')))
-  }
   fetchLocalTodos = () => {
     const localTodos = JSON.parse(localStorage.getItem('todos'))
     this.setState({ todos: localTodos })
+  }
+  addToDo = () => {
+    const allTodos = this.state.todos
+    const newId = allTodos.length + 1
+    allTodos.push({id: newId, title: 'SUPER TEST'})
+  }
+  removeTodo = (id) => {
+    const allTodos = this.state.todos
+    const filteredTodos = allTodos.map(todo =>
+      todo.id !== id
+    )
+    localStorage.setItem('todos', filteredTodos)
   }
   render () {
     return this.state.todos
