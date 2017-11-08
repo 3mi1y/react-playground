@@ -19,20 +19,28 @@ class MenuContainer extends Component {
   }
 
   updateMenuList = (e) => {
-    alert('you are refreshing the page!')
     e.preventDefault()
     const updatedMenuItems = this.state.menuItems.filter(item => {
-      return item.name === this.state.searchTerm
+      const menuItemName = item.name.trim().toLowerCase()
+      const searchTerm = this.state.searchTerm.trim().toLowerCase()
+      return menuItemName.split(' ').includes(searchTerm)
     })
     console.log(updatedMenuItems)
+    this.setState({ menuItems: updatedMenuItems })
+  }
+
+  resetSearch = () => {
+    this.setState({menuItems: data.items, searchTerm: ''})
   }
 
   render () {
     return (
       <div>
         <SearchForm
+          resetSearch={this.resetSearch}
           handleSearchTermChange={this.handleSearchTermChange}
           updateMenuList={this.updateMenuList}
+          searchTerm={this.state.searchTerm}
         />
         {
           this.state.menuItems
