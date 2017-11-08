@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './tex-mex-solution/App'
+import DataProvider from './todoApp/DataProvider'
 import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<DataProvider />, document.getElementById('root'))
 registerServiceWorker()
