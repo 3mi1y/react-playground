@@ -1,9 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import MenuContainer from './MenuContainer'
 
-const RestaurantInfo = ({name, address, phone}) => {
+const styles = {
+  jumbotron: {
+    border: 'solid 3px blue',
+    borderRadius: 20,
+    padding: 20,
+    width: '75%'
+  }
+}
+
+const RestaurantInfo = ({name, address, phone, city, state}) => {
   return (
-    <div>
+    <div style={styles.jumbotron}>
       <h1>{name}</h1>
       <div>
         <p>{address.street} {address.suite} </p>

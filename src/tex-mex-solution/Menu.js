@@ -2,9 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import MenuItem from './MenuItem'
 
+const styles = {
+  menuContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around'
+  }
+}
+
 const MenuList = ({ foodItems }) => {
   return (
-    <div>
+    <div style={styles.menuContainer}>
 
       {
         foodItems.map(food => {

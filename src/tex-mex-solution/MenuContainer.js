@@ -3,11 +3,18 @@ import data from './Data'
 import MenuList from './Menu'
 import SearchForm from './SearchForm'
 
+const styles = {
+  menu: {
+    margin: 20,
+    padding: 20,
+    width: '75%'
+  }
+}
+
 class MenuContainer extends Component {
   state = {
     menuItems: undefined,
     searchTerm: undefined
-
   }
 
   componentDidMount () {
@@ -74,7 +81,7 @@ class MenuContainer extends Component {
 
   render () {
     return (
-      <div>
+      <div style={styles.menu}>
         <SearchForm
           resetSearch={this.resetSearch}
           handleSearchTermChange={this.handleSearchTermChange}
