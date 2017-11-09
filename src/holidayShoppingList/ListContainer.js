@@ -17,6 +17,7 @@ class ListContainer extends Component {
   giftNameChange = (e) => this.setState({ giftName: e.target.value })
   giftPriceChange = (e) => this.setState({ giftPrice: e.target.value })
   giftImageChange = (e) => this.setState({ giftImage: e.target.value })
+  updateShoppingList = (arr) => this.setState({ shoppingList: arr })
 
   checkTotalPriceOfGifts = (arr) => {
     let totalPrice = 0
@@ -24,16 +25,17 @@ class ListContainer extends Component {
 
     for (let i = 0; i < arr.length; i += 1) { // doesn't hurt to brush up on the for loops
       totalPrice += arr[i].giftPrice
-    }
-
-    if (totalPrice > this.state.budget) {
-      exceedsBudget = true
+      if (totalPrice > this.state.budget) {
+        exceedsBudget = true
+      }
     }
     return exceedsBudget
   }
 
   addGift = (e) => {
     e.preventDefault()
+    console.log('from addGift()')
+
     const newShoppingList = this.state.shoppingList
     newShoppingList.push({
       recipientName: this.state.recipientName,
@@ -43,10 +45,12 @@ class ListContainer extends Component {
     })
 
     if (this.checkTotalPriceOfGifts(newShoppingList) === false) {
-      this.setState({ shoppingList: newShoppingList })
+      console.log('from if(this.checkTotalPriceOfGifts() === false)')
+      this.updateShoppingList(newShoppingList)
       console.log('ShoppingList: ')
       console.log(this.state.shoppingList)
     } else {
+      console.log('from else()')
       alert('You have exceeded your budget')
       console.log('You exceeded your budget')
       console.log(this.state.shoppingList)
