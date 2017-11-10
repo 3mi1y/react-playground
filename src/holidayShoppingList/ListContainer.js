@@ -2,6 +2,18 @@ import React, {Component} from 'react'
 import GiftForm from './GiftForm'
 import ListOfGifts from './ListOfGifts'
 
+const styles = {
+  giftContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'spaceAround',
+    alignItems: 'center'
+  },
+  image: {
+    maxWidth: '50%'
+  }
+}
+
 class ListContainer extends Component {
   state = {
     recipientName: '',
@@ -56,7 +68,7 @@ class ListContainer extends Component {
 
   render () {
     return (
-      <div>
+      <div style={styles.giftContainer}>
         <GiftForm
           addGift={this.addGift}
           recipientNameChange={this.recipientNameChange}

@@ -1,9 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+const styles = {
+  header: {
+    fontFamily: 'Spectral SC',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'spaceBetween',
+    alignItems: 'center'
+  }
+}
+
 const Header = ({title, subheader}) => {
   return (
-    <div>
+    <div style={styles.header}>
       <h1>{title}</h1>
       <h3>{subheader}</h3>
     </div>

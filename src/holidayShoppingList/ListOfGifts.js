@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Gift from './Gift'
 
 const ListOfGifts = ({ shoppingList }) => {
   return (
@@ -7,12 +8,7 @@ const ListOfGifts = ({ shoppingList }) => {
       {
         shoppingList.map((item) => {
           return (
-            <div>
-              <h3>Recipient: {item.recipientName}</h3>
-              <h5>Gift: {item.giftName}</h5>
-              <img src={item.giftImage} />
-              <p>Price: ${item.giftPrice}</p>
-            </div>
+            <Gift item={item} />
           )
         })
       }
