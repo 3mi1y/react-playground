@@ -22,7 +22,7 @@ class ListContainer extends Component {
     giftImage: '',
     shoppingList: [],
     totalPriceOfList: 0,
-    budget: 5 // default budget value
+    budget: 100 // default budget value
   }
 
   recipientNameChange = (e) => this.setState({ recipientName: e.target.value })

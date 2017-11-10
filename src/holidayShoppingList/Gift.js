@@ -6,7 +6,8 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'spaceAround',
-    alignItems: 'center'
+    alignItems: 'center',
+    border: '1px dotted black'
   },
   image: {
     maxWidth: '50%'
