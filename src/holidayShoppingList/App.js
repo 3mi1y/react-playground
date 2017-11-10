@@ -5,7 +5,10 @@ import ListContainer from './ListContainer'
 const App = () => {
   return (
     <div>
-      <Header />
+      <Header
+        title='Holiday Shopping List App'
+        subheader='A handy tool to use for gift shopping'
+      />
       <ListContainer />
     </div>
   )

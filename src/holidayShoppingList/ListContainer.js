@@ -3,7 +3,6 @@ import GiftForm from './GiftForm'
 import ListOfGifts from './ListOfGifts'
 
 class ListContainer extends Component {
-
   state = {
     recipientName: '',
     giftName: '',
@@ -67,8 +66,8 @@ class ListContainer extends Component {
         />
         {
           this.state.shoppingList.length !== 0
-          ? <ListOfGifts shoppingList={this.state.shoppingList} />
-          : <p>You need to add some things to your list!</p>
+            ? <ListOfGifts shoppingList={this.state.shoppingList} />
+            : <p>You need to add some things to your list!</p>
         }
       </div>
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const ListOfGifts = ({ shoppingList }) => {
   return (
@@ -17,6 +18,10 @@ const ListOfGifts = ({ shoppingList }) => {
       }
     </div>
   )
+}
+
+ListOfGifts.propTypes = {
+  shoppingList: PropTypes.func.isRequired
 }
 
 export default ListOfGifts

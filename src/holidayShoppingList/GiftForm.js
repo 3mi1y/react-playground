@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const GiftForm = ({ addGift, recipientNameChange, giftNameChange, giftPriceChange, giftImageChange }) => {
   return (
@@ -29,6 +30,14 @@ const GiftForm = ({ addGift, recipientNameChange, giftNameChange, giftPriceChang
       </form>
     </div>
   )
+}
+
+GiftForm.propTypes = {
+  addGift: PropTypes.func.isRequired,
+  recipientNameChange: PropTypes.func.isRequired,
+  giftNameChange: PropTypes.func.isRequired,
+  giftPriceChange: PropTypes.func.isRequired,
+  giftImageChange: PropTypes.func.isRequired
 }
 
 export default GiftForm
