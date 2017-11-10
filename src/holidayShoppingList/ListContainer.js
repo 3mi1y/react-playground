@@ -10,6 +10,7 @@ class ListContainer extends Component {
     giftPrice: 0,
     giftImage: '',
     shoppingList: [],
+    totalPriceOfList: 0,
     budget: 5 // default budget value
   }
 
@@ -19,41 +20,38 @@ class ListContainer extends Component {
   giftImageChange = (e) => this.setState({ giftImage: e.target.value })
   updateShoppingList = (arr) => this.setState({ shoppingList: arr })
 
-  checkTotalPriceOfGifts = (arr) => {
+  componentDidMount () {
+    this.getTotalPrice()
+  }
+  
+  getTotalPrice = () => {
     let totalPrice = 0
-    let exceedsBudget = false
+    let list = this.state.shoppingList
 
-    for (let i = 0; i < arr.length; i += 1) { // doesn't hurt to brush up on the for loops
-      totalPrice += arr[i].giftPrice
-      if (totalPrice > this.state.budget) {
-        exceedsBudget = true
-      }
+    for (let i = 0; i < list.length; i += 1) { // doesn't hurt to brush up on the for loops
+      totalPrice += Number(list[i].giftPrice)
     }
-    return exceedsBudget
+    this.setState({ totalPriceOfList: totalPrice })
   }
 
   addGift = (e) => {
     e.preventDefault()
-    console.log('from addGift()')
+    this.getTotalPrice()
 
-    const newShoppingList = this.state.shoppingList
-    newShoppingList.push({
+    let newGift = {
       recipientName: this.state.recipientName,
       giftName: this.state.giftName,
       giftPrice: this.state.giftPrice,
       giftImage: this.state.giftImage
-    })
+    }
 
-    if (this.checkTotalPriceOfGifts(newShoppingList) === false) {
-      console.log('from if(this.checkTotalPriceOfGifts() === false)')
-      this.updateShoppingList(newShoppingList)
-      console.log('ShoppingList: ')
-      console.log(this.state.shoppingList)
+    if ((this.state.totalPriceOfList + this.state.giftPrice) > this.state.budget) {
+      alert('You Can Not Purchase This!')
     } else {
-      console.log('from else()')
-      alert('You have exceeded your budget')
-      console.log('You exceeded your budget')
-      console.log(this.state.shoppingList)
+      const newShoppingList = this.state.shoppingList
+      newShoppingList.push(newGift)
+      this.setState({ shoppingList: newShoppingList })
+      this.setState({ recipientName: '', giftImage: '', giftPrice: '', giftName: '' })
     }
   }
 
