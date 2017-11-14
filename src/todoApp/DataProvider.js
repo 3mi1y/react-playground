@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import App from './App'
 
+// Local storage examples almost in place.
+
 class DataProvider extends Component {
   state = {
     todos: undefined
