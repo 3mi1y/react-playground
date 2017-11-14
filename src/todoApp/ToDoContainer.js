@@ -2,6 +2,12 @@ import React, {Component} from 'react'
 import ToDoList from './ToDoList'
 import ToDoForm from './ToDoForm'
 
+const styles = {
+  listContainer: {
+    display: 'flex'
+  }
+}
+
 class ToDoContainer extends Component {
   state = {
     toDos: [],
@@ -55,8 +61,6 @@ class ToDoContainer extends Component {
   render () {
     return (
       <div>
-        <h1> New ToDo Form </h1>
-        <h3> Completed ToDos </h3>
         <ToDoForm
           title={this.state.title}
           dueDate={this.state.dueDate}
@@ -64,13 +68,9 @@ class ToDoContainer extends Component {
           updateTitle={this.updateTitle}
           updateDueDate={this.updateDueDate}
         />
-        <div>
-          <h3>Incomplete</h3>
-          <ToDoList toDos={this.state.incompleteToDos} toggleTodoCompletion={this.toggleTodoCompletion} />
-        </div>
-        <div>
-          <h3>Complete</h3>
-          <ToDoList toDos={this.state.completedToDos} toggleTodoCompletion={this.toggleTodoCompletion} />
+        <div style={styles.listContainer}>
+          <ToDoList title={'Incomplete ToDos'} toDos={this.state.incompleteToDos} toggleTodoCompletion={this.toggleTodoCompletion} />
+          <ToDoList title={'Complete ToDos'} toDos={this.state.completedToDos} toggleTodoCompletion={this.toggleTodoCompletion} />
         </div>
       </div>
     )

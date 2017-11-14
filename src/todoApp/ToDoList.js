@@ -2,8 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ToDo from './ToDo'
 
-const ToDoList = ({toDos, toggleTodoCompletion}) =>
-  <div>
+const styles = {
+  container: {
+    backgroundColor: '#ecf0f1',
+    width: '50%',
+    color: '#3498db',
+    border: 'solid 3px #9b59b6',
+    padding: 20,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  }
+}
+
+const ToDoList = ({toDos, toggleTodoCompletion, title}) =>
+  <div style={styles.container}>
+    <h3>{title}</h3>
     {
       toDos.length > 0
         ? toDos.map(item =>
