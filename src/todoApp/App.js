@@ -1,9 +1,11 @@
 import React from 'react'
-import ToDoList from './ToDoList'
+import Header from './Header'
+import ToDoContainer from './ToDoContainer'
 
-const App = ({todos}) =>
+const App = () =>
   <div>
-    <ToDoList todos={todos} />
+    <Header />
+    <ToDoContainer />
   </div>
 
 export default App

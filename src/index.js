@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import DataProvider from './todoApp/DataProvider'
+import App from './todoApp/App'
 import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<DataProvider />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
 registerServiceWorker()
