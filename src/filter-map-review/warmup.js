@@ -41,7 +41,7 @@ const classes = [
     name: 'FREE Resume Building Course',
     length: 2,
     cost: 0,
-    instructor: 'TBD',
+    instructor: 'Professor Haslam',
     location: 'UC, main floor'
   }
 ]
@@ -74,7 +74,7 @@ const onlineClasses = classes.filter(x => {
 
 // Challenge Three - Use filter and/or map to only return the names of classes that only take two hours or less and cost less than $50
 const shortCheapClasses = classes.filter(x => {
-  return x.lengthInHours <= 2 && x.cost <= 50
+  return x.length <= 2 && x.cost <= 50
 }).map(x => {
   return x.name
 })
