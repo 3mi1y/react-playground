@@ -6,6 +6,11 @@ import {
 import NavigationBar from './NavigationBar'
 import About from './About'
 
+const Person = ({match}) =>
+  <div>
+    <h3> {match.params.name} </h3>
+  </div>
+
 const App = () =>
   <Router>
     <div>
@@ -13,6 +18,7 @@ const App = () =>
       <Route exact path='/' render={() => <div>Home</div>} />
       <Route path='/about' component={About} />
       <Route path='/topics' render={() => <div>Topics</div>} />
+      <Route path='/person/:name' component={Person} />
     </div>
   </Router>
 
