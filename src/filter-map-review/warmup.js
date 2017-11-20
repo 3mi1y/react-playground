@@ -6,7 +6,7 @@ const classes = [
     name: 'Knitting for Beginners',
     length: 3,
     cost: 50,
-    instructor: 'Suzy Knitter',
+    instructor: 'Suzy Moxley',
     location: 'Beads, Yarns and Threads'
   },
   {
@@ -14,7 +14,7 @@ const classes = [
     length: 1,
     cost: 100,
     instructor: 'Dr. Johnson',
-    location: 'UC, 2nd floor, Room 101'
+    location: 'UC - 2nd floor, Room 101'
   },
   {
     name: 'Basket Weaving',
@@ -42,7 +42,7 @@ const classes = [
     length: 2,
     cost: 0,
     instructor: 'Professor Haslam',
-    location: 'UC, main floor'
+    location: 'UC - main floor'
   }
 ]
 
